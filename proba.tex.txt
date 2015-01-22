@@ -1,0 +1,692 @@
+
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[10pt, conference]{IEEEtran}
+% Add the compsocconf option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+%\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+   \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+   \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+%\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+%\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Compact, low-power, FPGA-based multi-camera vision system for real-time image processing}
+
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Mate Nemeth}
+\IEEEauthorblockA{(Supervisor: Dr. Akos Zarandy)\\
+nemeth.mate@itk.ppke.hu}
+% \and
+% \IEEEauthorblockN{[Authors Name/s per 2nd Affiliation]}
+% \IEEEauthorblockA{[Dept. name of organization] (of Affiliation)\\
+% line 2: name of organization, acronyms acceptable\\
+% line 3: City, Country\\
+% line 4: Email: name@xyz.com}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+
+Autonomous maneuvering of UAVs (Unmanned Aerial Vehicles) in civil airspace is forbidden by flight authorities\cite{DoD,Eurocontrol}, because of various safety shortcomings. One of the most important missing capability of a UAV is the lack of collision warning and avoidance system. This paper presents a vision based on-board development platform for UAVs (FPGA board, interface board, miniature camera system). The system is capable of receiving the video-stream of maximum five cameras, using LVDS (Low Voltage Differential Signaling) technology. Our goal is to develop a massively parallel, real-time image processing  FPGA architecture based on this platform, which realizes the task of collision warning from visual sensor data. 
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+real-time vision system, UAV, multi-camera, FPGA, multi-core processing, collision warning, LVDS
+
+\end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+% no \IEEEPARstart
+%This demo file is intended to serve as a ``starter file''
+%for IEEE conference papers produced under \LaTeX\ using
+%IEEEtran.cls version 1.7 and later.
+An ongoing project in MTA-SZTAKI is aiming at developing a compact UAV, capable of autonomous maneuvering, even in highly utilized airspace, due to its on-board non-cooperative collision warning and avoidance system \cite{SZTAKI01}. According to Federal Aviation Administration (FAA)\cite{DoD} and Eurocontrol\cite{Eurocontrol}, the integration of UAVs to utilized civil airspace requires that UAVs are capable of performing at an equivalent level of safety (ELOS) to that of manned aircraft\cite{ELOS,Shane_Thesis}, to lower the probability of mid-air collisions. Collision avoidance has been identified as one of the most important issues of the above mentioned integration by international flight organizations.
+
+Several solutions exist in the field of collision warning: GPS based active radio transponders (Traffic Alert and Collision Avoidance System, TCAS), radars, or vision based systems. It turns out from the literature \cite{UAV1,UAV2}, that those systems using visual remote aircraft sensor for the detection of potentially dangerous intruder aircraft, are mainly using PCs for the calculations. To fit on a compact, low-weight UAV, the on-board systems have to meet various power consumption, weight and size considerations. As a result, a "miniature" embedded system should be used for the task, which seems to be a novelty according to the literature. The initial system \cite{SZTAKI02} was presented at ICVS (International Conference on Computer Vision Systems), and an other publication \cite{SZTAKI01}, related to the vision system, is submitted to JRTIP (Journal of Real-Time Image Processing). Our goal is to develop a hardware platform, which can be applied on a suitable UAV. This could be used in real operating conditions, as a framework for the experimental validation of later architectures and algorithms for low-cost, low-power, small-form-factor, mobile image-processing applications.
+
+The detection of intruder aircraft requires a permanent monitoring of a sufficiently large field of view ($220\,^{\circ} \times 70\,^{\circ}$ in our case), with high resolution cameras, to satisfy the separation volume defined by flight safety requirements in any given situation. The following sections describe the hardware elements of the sense-and-avoid development platform.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[scale=0.45]{5cam_serdes_layout.png}
+  \caption{Interface board layout, with five deserializers. (dimensions: $7.3 cm \times 4.6 cm$)}
+  \label{interface_layout}
+\end{figure}
+
+%All manuscripts must be in English. These guidelines include complete descriptions of the fonts, spacing, and related information for producing your proceedings manuscripts. Please follow %them and if you have any questions, direct them to the production editor in charge of your proceedings at Conference Publishing Services (CPS): Phone +1 (714) 821-8380 or Fax +1 (714) %761-1784.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+\section{System Architecture}
+
+As mentioned previously, an essential part of the project has been designed in the form of a development platform. It functions as a framework to the evaluation of the computational architectures to be designed on the reconfigurable fabric, even in a hardware-in-a-loop manner. The framework consists of four elements: 
+
+\begin{itemize}
+\item {\bfseries FPGA board}, with FMC-LPC connector
+\item {\bfseries Camera modules} (up to five), with the Texas FPD-Link III protocol
+\item  {\bfseries Interface card} between the FPGA board and the cameras, which re-converts serial input data into parallel data lines
+\item {\bfseries SSD drive}, to store the images
+\end{itemize}
+
+The block diagram of the system is shown in Figure \ref{system_architecture}. The following subsections describe the design considerations and features of each component.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[scale=1]{architecture.jpg}
+  \caption{Block diagram of the system.}
+  \label{system_architecture}
+\end{figure}
+
+
+\subsection{FPGA Board}
+Instead of designing a new one, we decided to use an existing FPGA development board. However the development of a small-form-factor FPGA board is planned, which fits the later described interface board in size. Three optional choices emerged during the development process: Xilinx SP605, LX150T, and Digilent ZedBoard. The first two contains Xilinx series 6 Spartan FPGAs, while the latter comes with a mounted 7 series Zynq SoC, with two physical ARM Cortex-A9 microprocessors attached to the reconfigurable fabric, which allows more flexibility in the case of hardware-software partitioning. The interface card has been designed to be compatible with all three platforms. In the later stages of the development, the ZedBoard seems to be the preferable choice, because of the above mentioned flexibility, and the fact, that new generation Xilinx HLS \cite{HLS} (High Level Synthesis) design flow supports only the 7 series FPGAs. The reason why the series 6 boards are considered as a real option, is that an image processing architecture has already been designed\cite{SZTAKI01} in SZTAKI Computational Optical Sensing and Processing Laboratory, which we want to be compatible with. 
+
+\subsection{Camera\cite{SZTAKI01}}
+The key component of a special purpose vision system is the camera. We decided to use multiple miniature cameras with S-mount (M12) lenses, instead of one high resolution camera with a low distortion ultra-wide angle optics, because of weight, size and especially financial considerations. We named two fundamental criteria against the cameras to be chosen, namely: it should have global shutter, and must be triggerable.
+
+A rolling shutter camera does not provide geometrically coherent image on a vibrating platform, because different horizontal bands of the image are captured in different time instants, with different camera axes. 
+
+Triggered mode is essential, because we have to capture the images in known time instances. The remote aircraft positions derived from the camera images are relative to our UAV, and the Inertial Measurement Unit (IMU) contains the exact position of our UAV, hence the synchronization of these units is vital.
+
+Formerly, we used off-the-shelf WVGA ($752 \times 480$) camera modules: MBSV034M-FFC from Mobisens, but its resolution turned out to be insufficient, so we designed a new module based on $1280 \times 960$ sized Aptina sensor (MT9M021, Figure \ref{1_2mpixel_cam}), with 3.66 mm focal length High Resolution Infinite Conjugate $\mu$-Video$^{TM}$ Imaging Lenses from Edmund Optics. 
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics{1_2mpixel.jpg}
+  \caption{1.2 Mpixel camera module, with the MT9M021 sensor.}
+  \label{1_2mpixel_cam}
+\end{figure}
+
+The advanced feature of our camera module is the applied DS90UB913Q serializer chip, which exploits the benefits of Texas Instruments FPD-Link III\cite{TI} serial protocol. FPD-Link is an application of the LVDS standard, designed specifically for high-speed digital video interfaces. The protocol embeds the clock, GPIO signals and even a bidirectional communication channel in the data signal and therefore uses only one differential pair to transmit all the necessary signals: the power, the digital video stream, the control signals, and the I2C bus, which is needed for setting up the sensor chip. 
+
+\subsection{Interface Board}
+Interfacing of the serial input stream of five cameras to the FMC-LPC connector of the FPGA board is an essential task of the framework (Figure \ref{interface_layout}). It is performed through the applied DS90UB914Q deserializers. An important design constraint was to ensure, that the corresponding signals of one camera are wired to the same IO bank of the FPGA (on all the three FPGA boards), to minimize the delay due to signal propagation, and to ensure that the IO buffers can be sychronised to the pixel clocks of each camera. The interface board is realized on a credit card sized ($7.3 cm \times 4.6 cm$) PCB, which is mechanically compatible with the above mentioned FPGA boards.
+
+\section{SERDES Evaluation Module Test}
+Since the interface board and the camera modules are still in production, the integration tests haven't been performed. However I managed to set up a hardware-in-the-loop test with one MBSV034M-FFC camera (with parallel data interface), and a serializer/deserializer evaluation module. The measurement setup contains an SP605 FPGA board, the SERDESUB-913 evaluation module (Figure \ref{serdes_test}), and two interface cards between the camera and ser/des cards. A Microblaze soft-processor (realized on the Spartan6 FPGA fabric) implements the control sequence of the ser/des ICs. The image data of the camera is streamed through the FPGA using AXI Stream protocol\cite{AXI}, to a monitor, so the video stream can be visualized in real-time. According to the previously mentioned measurement, the concept seems to be working, since the serial interface is capable of transmitting the video-stream at a maximum line rate of 1.4 Gbps. The power consumption of the components at a relevant 15 FPS (approx. 150 Mbps) transmission have been measured:
+Serializer: 360mW;
+Deserializer: 330mW;
+Image sensor: 270mW.
+
+As a result, an estimation for the power consumption of the whole system (without the FPGA board) appears to be approximately 4.8W, which is significantly less than in the case of any general purpose computational platform, that provides the same processing bandwidth.
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[scale=0.15]{serdes.jpg}
+  \caption{Serializer/deserializer evaluation board test setup.}
+  \label{serdes_test}
+\end{figure}
+
+\section{Integration to the airframe}
+Physical system integration is always a key point of a complex embedded system. It is especially true for an airborne vision system with multiple cameras, where the fixed relative camera orientations, and cancelling any cross vibrations are critical. As described in \cite{SZTAKI01, SZTAKI02} an aluminum camera holder frame (Figure \ref{mount})  has been mounted on the nose of the two engine polystyrene carrier aircraft, in a way that the optical axis of the front camera is aligned with the horizontal axis of the aircraft. The complete vision system with the FPGA board, the SSD drive, and the supply system is planned to be carried in the hull of the UAV. 
+
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=240pt,height=195pt]{patko_mounted.png}
+  \caption{The camera holder frame, mounted on the nose of the aircraft}
+  \label{mount}
+\end{figure}
+
+%\begin{figure*} \centering \mbox{
+%\subfigure{\includegraphics[scale=0.55]{patko.jpg}} 
+%\subfigure{\includegraphics[width=200pt,height=165pt]{patko_mounted.png}} }
+%\caption{Left: Aluminium camera holder frame; Right: The vision system mounted on the nose of the aircraft}
+%\label{Patko_mounted}
+%\end{figure*}
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+\section{Conclusion and Future Plans}
+As a conclusion of this paper, a low-cost, low-power, small-form-factor development platform has been designed for mobile image processing applications, which interfaces the image data to the FPGA, where various image processing architectures and algorithms can be evaluated and validated. The concept has been confirmed, with a hardware-in-a-loop test.
+
+We named two research directions for the future: 
+\begin{itemize}
+\item {\bfseries Architectural}: study of scientific results related to hardware generation from high abstraction level languages (HLS - High Level Synthesis), hardware-software co-design - partitioning, adaptive partial reconfiguring. 
+\item{\bfseries Algorithmical}: the examination of the above mentioned architectural considerations in image processing point of view\cite{EmbeddedImProc}, especially architectural FPGA implementation issues.
+\end{itemize}
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+The author wishes to acknowledge the guidance of Dr. Akos Zarandy, Dr. Zoltan Nagy, Dr. Andras Kiss, members of MTA-SZTAKI, Computational Optical Sensing and Processing Laboratory.
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{DoD}
+Department of Defense, \emph{Unmanned Aircraft System Airspace Integration Plan}, Tech. Rep. March, Department of Defense, 2011
+
+\bibitem{Eurocontrol}
+CARE, \emph{Integration of UAVs into future air traffic management}, Cooperative Actions of R\&D in Eurocontrol, 2001
+
+\bibitem{SZTAKI01}
+Akos Zarandy, Mate Nemeth, Zoltan Nagy, Andras Kiss, Levente Santha, Tamás Zsedrovits, \emph{A Real-Time Multi-Camera Vision System for UAV Collision Warning and Navigation}, submitted to JRTIP
+
+\bibitem{SZTAKI02}
+Akos Zarandy, Zoltan Nagy, Balint Vanek, Tamas Zsedrovits, Andras Kiss, Mate Nemeth, \emph{A Five-Camera Vision System for UAV Visual Attitude Calculation and Collision Warning}, 9th International Conference, ICVS 2013, St. Petersburg, Russia, July 16-18, 2013. Proceedings
+
+\bibitem{ELOS}
+David W. King, Allen Bertapelle, Chad Moses, \emph{UAV Failure Rate Criteria for Equivalent Level of Safety}, International Helicopter Safety Symposium, Montreal, 2005
+
+\bibitem{Shane_Thesis}
+Shane Degen, \emph{Reactive Image-based Collision Avoidance System for Unmanned Aircraft Systems}, Thesis, Queensland University of Technology, 2011
+
+\bibitem{UAV1}
+Dey, Debadeepta; Geyer, Christopher; Singh, Sanjiv; and Digioia, Matt, \emph{Passive, long-range detection of Aircraft: Towards a field deployable Sense and Avoid System} (2009). Robotics Institute.Paper 962. 
+
+\bibitem{UAV2}
+Mejias, Luis and Ford, Jason J. and Lai, John S. (2010) \emph{Towards the implementation of vision-based UAS sense-and-avoid} In:  Proceedings of the 27th International Congress of the Aeronautical Sciences(ICAS 2010), 19?24. September 2010, Acropolis Conference, Centre, Nice
+
+\bibitem{HLS}
+(2012, December 18). \emph{Vivado Design Suite User Guide - High-Level Synthesis} [Online] http://www.xilinx.com/products/design-tools/vivado/integration/esl-design/
+
+\bibitem{TI}
+(2013, April). \emph{AN-1032 An Introduction to FPD-Link} [Online] Available: http://www.ti.com/lit/an/snla045b/snla045b.pdf
+
+\bibitem{AXI}
+(2011, March 7). \emph{AXI Reference Guide} [Online] Available: http://www.xilinx.com/support/documentation/ip\_documentation/ug761\_ axi\_reference\_guide.pdf
+
+\bibitem{EmbeddedImProc}
+Donald G. Bailey \emph{Design for Embedded Image Processing on FPGA}, Massey University, New Zealand, JohnWiley \& Sons (Asia) Pte Ltd., 2011
+
+\end{thebibliography}
+% that's all folks
+\end{document}
+
